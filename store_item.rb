@@ -13,12 +13,24 @@ class Shoes
     @cost = cost
   end
 
+ def name=(input)
+    @name = input
+  end
+
   def name
     @name
   end
 
+  def color=(input)
+    @color = input
+  end
+
   def color
     @color
+  end
+
+  def cost=(input)
+    @cost = input
   end
 
   def cost
@@ -26,7 +38,7 @@ class Shoes
   end
 
   def print_out
-      p "name: #{name}, color: #{color}, cost: #{cost}"
+      puts "name: #{name}, color: #{color}, cost: #{cost}"
   end
 
 end
