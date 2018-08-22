@@ -31,10 +31,15 @@ class Manager < Employee
   end
 
   def give_all_raises
-      puts @employees.length
+    @employees.each do |employee|
+      puts employee.give_annual_raise
+    end
   end
 
   def fire_all_employees
+    @employees.each do |employee|
+      puts employee.active = false
+    end
   end
 end
 
@@ -61,4 +66,5 @@ manager = Manager.new(
                       employees: [employee_1, employee_2]
                       )
 
-p manager.give_all_raises
+manager.give_all_raises
+manager.fire_all_employees

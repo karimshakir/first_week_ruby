@@ -19,8 +19,10 @@ end
 
 
 class Car < Vehicle
+
+  attr_reader :fuel, :make, :model
   def initialize(fuel, make, model)
-      super
+      super()
       @fuel = fuel
       @make = make
       @model = model
@@ -30,11 +32,11 @@ class Car < Vehicle
   end
 end
 
-
 class Bike < Vehicle
-  def initialize(speed, type, weight)
-    super
-    @speed = speed
+
+  attr_accessor :type, :weight
+  def initialize(type, weight)
+     super()
     @type = type
     @weight = weight
   end
@@ -43,5 +45,7 @@ class Bike < Vehicle
     puts "Ring ring!"
   end
 end
+
+
 
 

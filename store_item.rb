@@ -9,22 +9,42 @@ class Shoes
   end
 
   def print_out
-      puts "name: #{name}, color: #{color}, cost: #{cost}"
+       "name: #{name}, color: #{color}, cost: #{cost}"
   end
 
 end
 
-my_shoes = Shoes.new(
-                    name: "new_balance",
-                    color: "royal",
-                    cost: "$60"
+shoe1 = Shoes.new(
+                    :name => "new_balance",
+                    :color => "blue",
+                    :cost => "$60"
                     )
+shoe2 = Shoes.new(
+                    name: "Reebok",
+                    color: "Red",
+                    cost: "$70"
+                    )
+shoe3 = Shoes.new(
+                    name: "under_armour",
+                    color: "orange",
+                    cost: "$80"
+                    )
+p shoe1.print_out
 
 
-class Sandles
-  def initialize(size)
-    super(input)
+class Sandles < Shoes
+  def initialize(size, input_item)
+    super(input_item)
     @size = size
   end
-end
 
+  def print_out
+   super + ", size: #{@size}"
+  end
+
+end
+sandles = Sandles.new(12, name: "under_armour",
+                    color: "orange",
+                    cost: "$80")
+
+p sandles.print_out
