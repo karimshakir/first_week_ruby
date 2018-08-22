@@ -18,6 +18,26 @@ class Employee
   end
 end
 
+class Manager < Employee
+  def initialize(input_options)
+    super(input_options)
+    @employees = input_options[:employees]
+  end
+
+  def send_report
+    puts "Sending email..."
+    # use email sending library
+    puts "Email sent!!!"
+  end
+
+  def give_all_raises
+      puts @employees.length
+  end
+
+  def fire_all_employees
+  end
+end
+
 employee_1 = Employee.new(
                           first_name: "Bill",
                           last_name: "McNeal",
@@ -30,5 +50,15 @@ employee_2 = Employee.new(
                           salary: 80000,
                           active: true
                           )
-employee_2.print_info
-employee_1.print_info
+# employee_2.print_info
+# employee_1.print_info
+
+manager = Manager.new(
+                      first_name: "Bill",
+                      last_name: "Lumbergh",
+                      salary: 100000,
+                      active: true,
+                      employees: [employee_1, employee_2]
+                      )
+
+p manager.give_all_raises
