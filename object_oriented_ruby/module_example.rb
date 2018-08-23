@@ -35,7 +35,6 @@ class Bike
   end
 end
 
-
 bike = Bike.new
 p bike.brake
 
