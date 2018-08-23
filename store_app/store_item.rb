@@ -1,10 +1,11 @@
-module InformationPage
+module Printable
   def print_out
-    p "name: #{name}, color: #{color}, cost: #{cost} size: #{@size}"
+    p "size: #{ @size }, name: #{ name }, color: #{ color }, cost: #{ cost }"
   end
 end
 
 class Shoes
+  include Printable
   attr_reader :name, :color, :cost
   attr_writer :name, :color, :cost
 
@@ -12,10 +13,6 @@ class Shoes
     @name = input[:name]
     @color = input[:color]
     @cost = input[:cost]
-  end
-
-  def print_out
-       "name: #{name}, color: #{color}, cost: #{cost}"
   end
 
 end
@@ -35,11 +32,10 @@ shoe3 = Shoes.new(
                     color: "orange",
                     cost: "$80"
                     )
-p shoe1.print_out
 
 
 class Sandles < Shoes
-  include InformationPage
+  include Printable
   def initialize(size, input_item)
     super(input_item)
     @size = size
@@ -47,23 +43,30 @@ class Sandles < Shoes
 
 end
 
+sandles = Sandles.new(
+                      12,
+                      name: "sandles_under_armour",
+                      color: "orange",
+                      cost: "$80"
+                      )
 
-sandles = Sandles.new(12, name: "under_armour",
-                    color: "orange",
-                    cost: "$80")
 
-p sandles.print_out
-
-class Boot < Shoes
-  include InformationPage
+class Boots < Shoes
+  include Printable
   def initialize(size, input_item)
     super(input_item)
     @size = size
   end
 
 end
-sandles = Sandles.new(12, name: "under_armour",
-                    color: "orange",
-                    cost: "$80")
 
-sandles.print_out
+boots = Boots.new(
+                  12,
+                  name: "under_armour",
+                  color: "orange",
+                  cost: "$80"
+                  )
+
+
+boots.print_out
+shoe1.print_out

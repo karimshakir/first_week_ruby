@@ -11,25 +11,23 @@ module Movable
     @direction = new_direction
   end
 end
-class Car
-  include Movable
+
+class Vehicle
   def initialize
     @speed = 0
     @direction = 'north'
   end
+end
 
+class Car < Vehicle
+  include Movable
   def honk_horn
     puts "Beeeeeeep!"
   end
 end
 
-class Bike
+class Bike < Vehicle
   include Movable
-  def initialize
-    @speed = 0
-    @direction = 'north'
-  end
-
   def ring_bell
     puts "Ring ring!"
   end
