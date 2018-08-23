@@ -1,3 +1,10 @@
+module Skid
+  def loose_control
+    p "skuurrrd"
+  end
+end
+
+
 class Vehicle
   def initialize
     @speed = 0
@@ -19,6 +26,7 @@ end
 
 
 class Car < Vehicle
+  include Skid
 
   attr_reader :fuel, :make, :model
   def initialize(fuel, make, model)
@@ -33,6 +41,7 @@ class Car < Vehicle
 end
 
 class Bike < Vehicle
+  include Skid
 
   attr_accessor :type, :weight
   def initialize(type, weight)
@@ -45,6 +54,12 @@ class Bike < Vehicle
     puts "Ring ring!"
   end
 end
+
+
+      bike = Bike.new(1,2)
+      bike.loose_control
+
+
 
 
 

@@ -1,3 +1,9 @@
+module InformationPage
+  def print_out
+    p "name: #{name}, color: #{color}, cost: #{cost} size: #{@size}"
+  end
+end
+
 class Shoes
   attr_reader :name, :color, :cost
   attr_writer :name, :color, :cost
@@ -33,13 +39,26 @@ p shoe1.print_out
 
 
 class Sandles < Shoes
+  include InformationPage
   def initialize(size, input_item)
     super(input_item)
     @size = size
   end
 
-  def print_out
-   super + ", size: #{@size}"
+end
+
+
+sandles = Sandles.new(12, name: "under_armour",
+                    color: "orange",
+                    cost: "$80")
+
+p sandles.print_out
+
+class Boot < Shoes
+  include InformationPage
+  def initialize(size, input_item)
+    super(input_item)
+    @size = size
   end
 
 end
@@ -47,4 +66,4 @@ sandles = Sandles.new(12, name: "under_armour",
                     color: "orange",
                     cost: "$80")
 
-p sandles.print_out
+sandles.print_out
