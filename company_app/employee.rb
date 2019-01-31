@@ -14,7 +14,7 @@ class Employee
   end
 
   def give_annual_raise
-    @salary = @salary * 1.05
+    @salary = @salary * 1.45
   end
 
   def get_promotion
