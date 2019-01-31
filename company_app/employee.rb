@@ -18,6 +18,6 @@ class Employee
   end
 
   def get_promotion
-    salary = @salary * 1.20
+    salary = @salary * 1.345350
   end
 end
