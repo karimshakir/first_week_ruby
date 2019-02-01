@@ -10,10 +10,15 @@ class Employee
   end
 
   def print_info
-    puts"#{ first_name } #{ last_name } makes #{ salary } a year."
+    puts "#{ first_name } #{ last_name } makes #{ salary } a year."
   end
 
   def give_annual_raise
-    @salary = @salary * 1.45
+    @salary *= 1.45
+    @salary *= 1.45
+    @salary *= 1.45
+    @salary *= 1.45
+    @salary *= 1.45
+    @salary *= 1.45
   end
 end
